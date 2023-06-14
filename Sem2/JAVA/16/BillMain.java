@@ -1,14 +1,11 @@
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
-// Interface
 interface Billable {
+
     double calculate();
 }
 
-// Product class implementing Billable interface
+
 class Product implements Billable {
     private String id;
     private String name;
@@ -28,25 +25,23 @@ class Product implements Billable {
         return total;
     }
 
-    @Override
+  
     public String toString() {
-        return String.format("%-10s %-20s %-10d $%.2f $%.2f",
+        return String.format("%-10s %-20s %-10d Rs%.2f Rs%.2f",
                 id, name, quantity, unitPrice, total);
     }
 }
 
-// Main class
 public class BillMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Collecting order details
+  
         System.out.print("Enter Order Number: ");
         int orderNumber = scanner.nextInt();
         System.out.print("Enter Order Date: ");
         String orderDate = scanner.next();
 
-        // Creating products
         List<Product> products = new ArrayList<>();
 
         System.out.print("Enter the number of products: ");
@@ -67,7 +62,7 @@ public class BillMain {
             products.add(product);
         }
 
-        // Displaying the bill
+      
         System.out.println("\n===========================================");
         System.out.println("               INVOICE BILL");
         System.out.println("===========================================");
@@ -84,7 +79,8 @@ public class BillMain {
         }
 
         System.out.println("-------------------------------------------");
-        System.out.printf("%-46s $%.2f\n", "Grand Total:", grandTotal);
+        System.out.printf("%-46s Rs%.2f\n", "Grand Total:", grandTotal);
     }
 }
+
 
