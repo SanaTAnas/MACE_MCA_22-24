@@ -1,60 +1,45 @@
 import java.util.*;
-
-import java.text.Collator;
-
-class Sort{
-
-   String s[];
-   
-   int n;
-   
-   sort(int n){
-   
-      this.n=n;
-      
-      s=new String[n];
-      
-      Scanner sc=new Scanner(System.in);
-      
-      for(int i=0;i<n;i++){
-      
-         System.out.print("Text"+(i+1)+":");
-         
-         s[i]=sc.nextLine();
-         
-         }}
-        
-    void sort(){
-    
-       String t='';
-       
-       for(i=0;i<n-1;i++)
-       
-          for(j=0;j<n-i-1;j++)
-          
-             if(s[j].compareTo(s[j+1])>0){
-             
-                t=s[j];
-                
-                s[j]=s[j+1];
-                
-                s[j+1]=t;
-                }
-                
-     void show(){
-        
-        for(int i=0;i<n;i++)
-        
-        System.out.print(s[i]);
-        
+class sortDemo
+{
+    String s[];
+    int n;
+    sortDemo(){}
+    sortDemo(int n){
+        Scanner sc=new Scanner(System.in);
+        this.n=n;
+        s=new String[n];
+        System.out.println("\n Enter 6 Strings:");
+        for(int i=0;i<n;i++){
+            s[i]=sc.nextLine();
         }
-        
-class StrSort      
-public static void main(String []a){
+    }
+    void sort()
+    {
+        String temp="";
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                if(s[i].compareTo(s[j])>0)
+                {
+                    temp=s[i];
+                    s[i]=s[j];
+                    s[j]=temp;
+                }
+            }
+        }     
+    }
+    void show()
+    {
+        System.out.println("\n Array\n");
+        for(int i=0;i<n;i++){
+            System.out.println("\n"+s[i]);
+        }
+    }
+    public static void main(String a[]){
+        sortDemo s=new sortDemo(6);
+        s.sort();
+        s.show();
 
-   Sort s=new Sort(5);
-   
-   s.sort();
-   
-   s.show();}
-      
+    }
+}
