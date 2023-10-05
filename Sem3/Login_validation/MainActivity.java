@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             user=(EditText)
     findViewById ( R.id.username );
             pwd=(EditText)
-    findViewById ( R.id.pwd );
+    findViewById ( R.id.pswd );
             String a=user.getText().toString();
             String b=pwd.getText().toString();
             if(a.equals(u) && b.equals(p))
