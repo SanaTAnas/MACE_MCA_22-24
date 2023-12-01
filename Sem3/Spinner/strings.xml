@@ -1,14 +1,9 @@
-package com.example.spinner;
+<resources>
+    <string name="app_name">New_1</string>
+    <string-array name="Country">
+        <item>India</item>
+        <item>United Kingdom</item>
+        <item>Australia</item>
+    </string-array>
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-}
+</resources>
