@@ -11,19 +11,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
     SharedPreferences sp;
-    private EditText userview,emailview;
-    TextView t1,t2;
+    private TextView userview,emailview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         sp = getSharedPreferences("MyPref",MODE_PRIVATE);
-        t1 = findViewById(R.id.userview);
-        t2 = findViewById(R.id.emailview);
+        userview = findViewById(R.id.userview);
+        emailview = findViewById(R.id.emailview);
         if (sp.contains("Name"))
-            t1.setText(sp.getString("Name",""));
+            userview.setText(sp.getString("Name",""));
         if (sp.contains("Email"))
-            t2.setText(sp.getString("Email",""));
+            emailview.setText(sp.getString("Email",""));
     }
     public void previousActivity(View v){
         System.out.println("Previous");
